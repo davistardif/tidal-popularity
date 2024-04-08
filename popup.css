@@ -4,6 +4,9 @@ body {
 
 table,
 td {
-  border: 1px solid #333;
-  padding: .3rem;
+  border: 2px solid #bbc4c7;
+  padding: .4rem;
+  background-color: #2a3338;
+  color: white;
+  justify-content: center;
 }
