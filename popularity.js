@@ -21,6 +21,9 @@ function findObjectsWithKey(obj, key, result = []) {
 }
 
 function listener(details) {
+  // avoid scraping recommendations: only want the tracks in the album/playlist
+  if (details.url.includes("/recommendations/"))
+    return {};
   let filter = browser.webRequest.filterResponseData(details.requestId);
   let decoder = new TextDecoder("utf-8");
   let encoder = new TextEncoder();
