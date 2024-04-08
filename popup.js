@@ -1,9 +1,11 @@
 browser.runtime.sendMessage({ action: "getPopularityStats" }, response => {
-  display(response.popularityStats)
+  display(response.popularityStats);
 });
 
 function display(popularityStats) {
   let table = document.querySelector(".popularity-table");
+  let body = document.createElement("tbody");
+  table.appendChild(body);
   for (let i = 0; i < popularityStats.length; i++) {
     let stat = popularityStats[i];
     let tr = document.createElement("tr");
@@ -16,7 +18,8 @@ function display(popularityStats) {
     tr.appendChild(title);
     tr.appendChild(type);
     tr.appendChild(popularity);
-    table.appendChild(tr);
+    body.appendChild(tr);
   }
+  sorttable.makeSortable(table);
 }
     
