@@ -45,7 +45,7 @@ function listener(details) {
 
 browser.webRequest.onBeforeRequest.addListener(
   listener,
-  {urls: ["https://listen.tidal.com/v1/pages/*", "https://listen.tidal.com/v1/playlists/*"]},
+  {urls: ["https://listen.tidal.com/v1/pages/*", "https://listen.tidal.com/v1/playlists/*/items*"]},
   ["blocking"]
 );
 
